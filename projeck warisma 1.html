@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Aplikasi Kalkulator Sederhana></title>
+        <style>
+            body{
+                background-color:aqua;
+                font-family:monospace;
+            }
+            table{
+                width:320px;
+                margin:40px auto;
+                background-color:white;
+                boder-color:white;
+            }
+            td{
+                width:25%;
+                border-color:white;
+                
+            }
+            button{
+                height:70px;
+                font-size:30px;
+                border:none;
+                text-align:center;
+                width:100%;
+            }
+            #inputLabel{
+                height: 100px;
+                font-size: 60px;
+                background-color: #dedbdb;
+                vertical-align: bottom;
+                text-align: right;
+            }
+            </style>
+            </head>
+            <body>
+                <table border="cellspacing"="0">
+                    <tr>
+                        <td colspan="4"id="inputLabel">0</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button onclick="tombol(this)">AC</button></td>
+                            <td><button onclick="tombol(this)">Del</button></td>
+                            <td><button onclick="tombol(this)">/</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="tombol(this)">7</button></td>
+                        <td><button onclick="tombol(this)">8</button></td>
+                        <td><button onclick="tombol(this)">9</button></td>
+                        <td><button onclick="tombol(this)">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="tombol(this)">4</button></td>
+                        <td><button onclick="tombol(this)">5</button></td>
+                        <td><button onclick="tombol(this)">6</button></td>
+                        <td><button onclick="tombol(this)">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="tombol(this)">1</button></td>
+                        <td><button onclick="tombol(this)">2</button></td>
+                        <td><button onclick="tombol(this)">3</button></td>
+                        <td><button onclick="tombol(this)">+</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button onclick="tombol(this)">0</button></td>
+                        <td><button onclick="tombol(this)">.</button></td>
+                        <td><button onclick="tombol(this)">=</button></td>
+                    </tr>
+                    </table>
+                <script>
+                    var inputLabel=document.getElementById('inputLabel');
+                    function tombol(obj){
+                        var kondisi=obj.innerHTML;
+                        if(kondisi=="="){
+                            inputLabel.innerHTML=eval(inputLabel.innerHTML);
+                        }else if(kondisi=="AC"){
+                            inputLabel.innerHTML="0";
+                        }else if(kondisi=="Del"){
+                            inputLabel.innerHTML=inputLabel.innerHTML.slice(0,-1)||'0';
+                        }else{
+                            if(inputLabel.innerHTML=="0"){
+                                inputLabel.innerHTML=kondisi;
+                            }else{
+                                inputLabel.innerHTML+=kondisi;
+                            }
+                        }
+                    }
+                    </script>
+                    </body>
+                    </html>
+                            
+               
